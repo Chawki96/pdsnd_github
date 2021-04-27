@@ -199,26 +199,28 @@ def more_information(df):
    
 def description(df):
     print(df.describe())
-
+#a while loop to restart the program everytime the user input yes
 while True:
     city, month, day = get_filters()
     df = load_data(city, month, day)
     option =input('\nWould you like to view 5 rows of individual trip data? Enter yes or no\n').lower()
     start_loc=0
+    #display 5 rows of individual trip data until the user input no  
     while option=='yes':
         print(df.iloc[start_loc:start_loc+5])
         start_loc+=5
         option=input('do you want to continue yes or no \n')
+    #Ask the user if he want display statistics about : time ,station ,trip...
     option2 =input('Do you want to display some statistics about the data "yes" or "no"\n').lower()
     if option2=='yes':
         time_stats(df)
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
-    elif option2=='no':
-        info=input('do you want more information about the data "yes" or "no" \n').lower()
-        if info=='yes':
-            more_information(df)
+    #Ask user if he want know more details about our Data
+    info=input('do you want more information about the data "yes" or "no" \n').lower()
+    if info=='yes':
+        more_information(df)
     choice_info=input('do you want more descriptive information about the data "yes" or "no" \n" \n').lower()
     
     if choice_info=='yes':
