@@ -30,7 +30,7 @@ def get_filters():
     
     print('looks like you want to hear about {}! if this not true ,restart the program now !'.format(city))
     
-    #in this function i used a list of months and days to deal with exceptions
+
 
     # get user input for month (all, january, february, ... , june)
 
@@ -58,7 +58,7 @@ def get_filters():
 
 def load_data(city, month, day):
     """
-    loads Data for one city and filter its data as the user specification (month and day)
+    Loads data for the specified city and filters by month and day if applicable.
     """
 
     load = pd.read_csv(CITY_DATA[city])
