@@ -196,8 +196,9 @@ def user_stats(df):
 
 def more_information(df):
     print(df.info())
+   
+def description(df):
     print(df.describe())
-
 
 while True:
     city, month, day = get_filters()
@@ -218,11 +219,10 @@ while True:
         info=input('do you want more information about the data "yes" or "no" \n').lower()
         if info=='yes':
             more_information(df)
-
-        
+    choice_info=input('do you want more descriptive information about the data "yes" or "no" \n" \n').lower()
     
-
-    
+    if choice_info=='yes':
+        description(df)
     
 
     
