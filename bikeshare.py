@@ -214,10 +214,16 @@ while True:
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
+    elif option2=='no':
+        info=input('do you want more information about the data "yes" or "no" \n').lower()
+        if info=='yes':
+            more_information(df)
+
+        
     
-    info=input('do you want more information about the data "yes" or "no" \n').lower()
-    if info=='yes':
-        more_information(df)
+
+    
+    
 
     
 
